@@ -6,3 +6,4 @@ index/
 notebooks/cache/
 notebooks/other/
 out/
+.DS_Store
