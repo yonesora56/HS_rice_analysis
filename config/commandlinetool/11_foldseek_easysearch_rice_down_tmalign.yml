@@ -1,0 +1,47 @@
+INPUT_DIRECTORY:
+  class: Directory
+  location: ../../out/rice_down/rice_down_mmcif/
+FILE_MATCH_PATTERN: "*.cif"
+FOLDSEEK_INDEX:
+  class: File
+  location: ../../index/index_uniprot/uniprot
+  secondaryFiles:
+    - class: File
+      location: ../../index/index_uniprot/uniprot_ca
+    - class: File
+      location: ../../index/index_uniprot/uniprot_ca.dbtype
+    - class: File
+      location: ../../index/index_uniprot/uniprot_ca.index
+    - class: File
+      location: ../../index/index_uniprot/uniprot_h
+    - class: File
+      location: ../../index/index_uniprot/uniprot_h.dbtype
+    - class: File
+      location: ../../index/index_uniprot/uniprot_h.index
+    - class: File
+      location: ../../index/index_uniprot/uniprot_mapping
+    - class: File
+      location: ../../index/index_uniprot/uniprot_ss
+    - class: File
+      location: ../../index/index_uniprot/uniprot_ss.dbtype
+    - class: File
+      location: ../../index/index_uniprot/uniprot_ss.index
+    - class: File
+      location: ../../index/index_uniprot/uniprot_taxonomy
+    - class: File
+      location: ../../index/index_uniprot/uniprot.dbtype
+    - class: File
+      location: ../../index/index_uniprot/uniprot.index
+    - class: File
+      location: ../../index/index_uniprot/uniprot.lookup
+    - class: File
+      location: ../../index/index_uniprot/uniprot.version
+OUTPUT_FILE_NAME1: foldseek_output_uniprot_down_all_evalue01_tmalign.tsv
+EVALUE: 0.1
+ALIGNMENT_TYPE: 1 # 1: TM-align, 2: 3Di + AA
+FORMAT_MODE: 4
+FORMAT_OUTPUT: "query,target,evalue,prob,gapopen,pident,fident,nident,qstart,qend,qlen,tstart,tend,tlen,alnlen,qcov,tcov,lddt,qtmscore,ttmscore,alntmscore,rmsd,taxid,taxname,taxlineage,qaln,taln,mismatch,lddtfull"
+THREADS: 16
+SPLIT_MEMORY_LIMIT: "120G"
+PARAM_INPUT_FORMAT: 2
+PARAM_TAXONOMY_ID_LIST: "9606,10090,3702,4577,4529"

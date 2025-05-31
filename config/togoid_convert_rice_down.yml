@@ -1,0 +1,5 @@
+id_convert_file:
+  class: File
+  location: ../Data/16_foldseek_hit_idlist/uniprot_id_rice_down_human.txt
+route_dataset: "uniprot,ensembl_protein,ensembl_transcript,ensembl_gene,hgnc,hgnc_symbol"
+output_file_name: "togoid_convert_rice_down_human.tsv"

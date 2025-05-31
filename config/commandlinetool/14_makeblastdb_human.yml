@@ -1,0 +1,5 @@
+index_dir_name: index_uniprot_human
+input_fasta_file: 
+  class: File
+  format: edam:format_1929
+  location: ../../Data/Data_uniprot/FASTA_for_index/uniprotkb_human_all_241107.fasta

@@ -1,0 +1,18 @@
+target_genelist:
+  class: File
+  location: ../Data/09_goatools/HN5_genes_up_rice.txt
+background_genelist:
+  class: File
+  location: ../Data/09_goatools/ensembl/rice_all_genelist_r58.txt
+annotation_file:
+  class: File
+  location: ../Data/09_goatools/rice_go_annotation_r58_concatenated.txt
+pvalue: 0.01
+method: fdr_bh
+pval_field: fdr_bh
+obo_file:
+  class: File
+  location: ../Data/09_goatools/go_v202503.obo
+obsolete_go: replace
+output_file_name: rice_go_enrichment_up.tsv
+stdout_file_name: find_enrichment_stdout_up.txt

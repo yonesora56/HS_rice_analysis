@@ -1,0 +1,33 @@
+INDEX_DIR_NAME_QUERY_SPECIES: "index_rice"
+INDEX_DIR_NAME_HIT_SPECIES: "index_human"
+INPUT_FASTA_FILE_QUERY_SPECIES:
+  class: File
+  format: edam:format_1929
+  location: ../Data/Data_uniprot/FASTA_for_index/uniprotkb_rice_all_250526.fasta
+INPUT_FASTA_FILE_HIT_SPECIES:
+  class: File
+  format: edam:format_1929
+  location: ../Data/Data_uniprot/FASTA_for_index/uniprotkb_human_all_250526.fasta
+ENTRY_BATCH_QUERY_SPECIES:
+  class: File
+  location: ../Data/16_foldseek_hit_idlist/uniprot_id_rice_up_rice.txt
+ENTRY_BATCH_HIT_SPECIES:
+  class: File 
+  location: ../Data/16_foldseek_hit_idlist/uniprot_id_rice_up_human.txt
+
+# blastdbcmd outputs
+BLASTDBCMD_RESULT_FILE_NAME_QUERY_SPECIES: "blastdbcmd_result_rice_up_rice.fasta"
+BLASTDBCMD_LOGFILE_NAME_QUERY_SPECIES: "blastdbcmd_result_rice_up_rice.log"
+BLASTDBCMD_RESULT_FILE_NAME_HIT_SPECIES: "blastdbcmd_result_rice_up_human.fasta"
+BLASTDBCMD_LOGFILE_NAME_HIT_SPECIES: "blastdbcmd_result_rice_up_human.log"
+SEQRETSPLIT_OUTPUT_DIR_NAME_QUERY_SPECIES: "split_fasta_rice_up_rice"
+SEQRETSPLIT_OUTPUT_DIR_NAME_HIT_SPECIES: "split_fasta_rice_up_human"
+FOLDSEEK_EXTRACT_TSV:
+  class: File
+  format: edam:format_3475
+  location: ../Data/14_foldseek_result/foldseek_output_uniprot_rice_up_9606.tsv
+
+NEEDLE_RESULT_DIR_NAME: result_needle_rice_up
+WATER_RESULT_DIR_NAME: result_water_rice_up
+ALIGNMENT_QUERY_COLUMN_NUMBER: 2
+ALIGNMENT_TARGET_COLUMN_NUMBER: 3

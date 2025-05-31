@@ -1,0 +1,6 @@
+# Execute 2025-01-27
+id_convert_file:
+  class: File
+  location: ../../out/rice_up/rice_up_tmalign_result/uniprot_id_human_up_tmalign.txt
+route_dataset: "uniprot,ensembl_protein,ensembl_transcript,ensembl_gene,hgnc,hgnc_symbol"
+output_file_name: "rice_up_tmalign_togoid_convert.tsv"

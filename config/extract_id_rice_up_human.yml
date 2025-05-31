@@ -1,0 +1,8 @@
+tsvfile:
+  class: File
+  format: edam:format_3475
+  location: ../Data/14_foldseek_result/foldseek_output_uniprot_rice_up_9606.tsv
+
+column_number: 3
+
+output_file_name: "uniprot_id_rice_up_human.txt"

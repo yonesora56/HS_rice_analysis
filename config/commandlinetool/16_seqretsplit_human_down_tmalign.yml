@@ -1,0 +1,5 @@
+sequence:
+  class: File
+  format: edam:format_1929
+  location: ../../out/rice_down/rice_down_tmalign_result/blastdbcmd_human_down_tmalign.fasta
+output_dir_name: split_fasta_human_down_tmalign

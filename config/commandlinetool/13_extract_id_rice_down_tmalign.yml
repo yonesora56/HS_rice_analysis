@@ -1,0 +1,6 @@
+tsvfile:
+  class: File
+  format: edam:format_3475
+  location: ../../out/rice_down/rice_down_tmalign_result/foldseek_rice_down_9606_tmalign.tsv
+column_number: 2
+output_file_name: uniprot_id_rice_down_tmalign.txt

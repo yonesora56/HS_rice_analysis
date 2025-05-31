@@ -1,0 +1,13 @@
+
+INPUT_DIRECTORY:
+  class: Directory
+  location: ../Data/12_rice_up_mmcif
+
+OUTPUT_FILE_NAME1: "foldseek_output_uniprot_rice_up_all_evalue01_tmalign.tsv"
+
+EVALUE: 0.1
+ALIGNMENT_TYPE: 1 # 0: 3Di Gotoh-Smith-Waterman (local, not recommended), 1: TMalign (global, slow), 2: 3Di+AA Gotoh-Smith-Waterman (local, default)
+FORMAT_MODE: 4
+THREADS: 16
+SPLIT_MEMORY_LIMIT: "120G"
+PARAM_INPUT_FORMAT: 2

@@ -1,0 +1,8 @@
+.vscode/
+Archive/
+cwl_cache/
+Data/
+index/
+notebooks/cache/
+notebooks/other/
+out/

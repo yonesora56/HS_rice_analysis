@@ -1,0 +1,12 @@
+species:
+  species_name: rice
+  binomial_name: oryza_sativa # "_" is necessary
+  ensembl:
+    release: 58
+    ref_transcript: Oryza_sativa.IRGSP-1.0.cdna.all.fa.gz
+settings:
+  threads: 10
+  salmon:
+    docker_image: "combinelab/salmon:1.10.2"
+  tximport: # Please check the version of tximport 
+    convert_file: "rice_tx2geneID_R58.tsv"

@@ -1,0 +1,33 @@
+index_files:
+  class: File
+  location: ../../index/index_uniprot_human/uniprotkb_human_all_241107.fasta
+  secondaryFiles:
+    - class: File
+      location: ../../index/index_uniprot_human/uniprotkb_human_all_241107.fasta.pdb
+    - class: File
+      location: ../../index/index_uniprot_human/uniprotkb_human_all_241107.fasta.phd
+    - class: File
+      location: ../../index/index_uniprot_human/uniprotkb_human_all_241107.fasta.phi
+    - class: File
+      location: ../../index/index_uniprot_human/uniprotkb_human_all_241107.fasta.phr
+    - class: File
+      location: ../../index/index_uniprot_human/uniprotkb_human_all_241107.fasta.pin
+    - class: File
+      location: ../../index/index_uniprot_human/uniprotkb_human_all_241107.fasta.pjs
+    - class: File
+      location: ../../index/index_uniprot_human/uniprotkb_human_all_241107.fasta.pog
+    - class: File
+      location: ../../index/index_uniprot_human/uniprotkb_human_all_241107.fasta.pos
+    - class: File
+      location: ../../index/index_uniprot_human/uniprotkb_human_all_241107.fasta.pot
+    - class: File
+      location: ../../index/index_uniprot_human/uniprotkb_human_all_241107.fasta.psq
+    - class: File
+      location: ../../index/index_uniprot_human/uniprotkb_human_all_241107.fasta.ptf
+    - class: File
+      location: ../../index/index_uniprot_human/uniprotkb_human_all_241107.fasta.pto
+entry_batch:
+  class: File
+  location: ../../out/rice_up/rice_up_tmalign_result/uniprot_id_human_up_tmalign.txt
+retrieve_result_file_name: blastdbcmd_human_up_tmalign.fasta
+logfile_name: blastdbcmd_human_up_tmalign.log
