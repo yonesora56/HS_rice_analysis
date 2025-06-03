@@ -12,7 +12,7 @@ method: fdr_bh
 pval_field: fdr_bh
 obo_file:
   class: File
-  location: ../Data/09_goatools/go_v202503.obo
+  location: ../Data/09_goatools/go-basic_v202503.obo
 obsolete_go: replace
 output_file_name: rice_go_enrichment_down.tsv
 stdout_file_name: find_enrichment_stdout_down.txt
