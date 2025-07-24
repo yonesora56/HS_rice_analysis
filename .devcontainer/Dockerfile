@@ -14,7 +14,19 @@ RUN apt-get update && apt-get -y upgrade && apt-get install -y --no-install-reco
     build-essential \
     libgmp-dev \
     libmagick++-dev \
-    libglpk-dev
+    libglpk-dev \
+    libnss3 \
+    libatk-bridge2.0-0 \
+    libcups2 \
+    libxcomposite1 \
+    libxdamage1 \
+    libxfixes3 \
+    libxrandr2 \
+    libgbm1 \
+    libxkbcommon0 \
+    libpango-1.0-0 \
+    libcairo2 \
+    libasound2
 
 # RUN SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/commandhistory/.bash_history" \
 #     && echo "$SNIPPET" >> "/root/.bashrc"
@@ -49,6 +61,8 @@ RUN pip install \
     goatools==1.4.12 \
     pipx==1.6.0 \
     biopython==1.84 \
+    plotly==6.1.2 \
+    kaleido==1.0.0 \
     cwltool==3.1.20250110105449 \
     cwltest==2.5.20241122133319
 
