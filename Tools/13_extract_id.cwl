@@ -16,10 +16,10 @@ inputs:
     label: "input tsv file"
     type: File
     format: edam:format_3475
-    default:
-      class: File
-      format: edam:format_3475
-      location: ../out/rice_up/foldseek_rice_up_9606_tmalign.tsv
+    # default:
+    #   class: File
+    #   format: edam:format_3475
+    #   location: ../out/rice_up/foldseek_rice_up_9606_tmalign.tsv
   - id: column_number
     type: int
     doc: "column number"

@@ -5,7 +5,7 @@ cwlVersion: v1.2
 label: "extract target species"
 doc: |
   extract target species from foldseek easy-search result using python script
-  python script: ../scripts/extract_target_species.py
+  python script: ../scripts/extract_target_species_v2.py
 
 baseCommand: [python3]
 arguments:
@@ -25,15 +25,15 @@ inputs:
     default:
       class: File
       format: edam:format_3996
-      location: ../scripts/extract_target_species.py
+      location: ../scripts/extract_target_species_v2.py
   - id: input_file
     label: "foldseek easy-search result"
     type: File
     format: edam:format_3475
-    default:
-      class: File
-      format: edam:format_3475
-      location: ../test/oryza_sativa_test/foldseek_output_swissprot_up_all_evalue01.tsv
+    # default:
+    #   class: File
+    #   format: edam:format_3475
+    #   location: ../Data/14_foldseek_result/evalue01/foldseek_output_uniprot_rice_up_all_evalue01.tsv
   - id: target_species
     label: "target species"
     type: int
@@ -42,7 +42,7 @@ inputs:
     label: "output file name"
     format: edam:data_1050
     type: string
-    default: "foldseek_os_random_9606.tsv"
+    default: "foldseek_output_uniprot_rice_up_9606.tsv"
 
 outputs:
   - id: output_extract_file
@@ -50,6 +50,7 @@ outputs:
     format: edam:format_3475
     outputBinding:
       glob: "$(inputs.output_file_name)"
+
 
 $namespaces:
   s: https://schema.org/

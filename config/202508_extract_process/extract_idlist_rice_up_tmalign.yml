@@ -1,0 +1,11 @@
+FOLDSEEK_RESULT_FILE:
+  class: File
+  format: edam:format_3475
+  location: ../../Data/14_foldseek_result/evalue01/foldseek_output_uniprot_rice_up_all_evalue01_tmalign.tsv
+
+TARGET_SPECIES: 9606
+OUTPUT_EXTRACT_FILE_NAME: foldseek_output_uniprot_rice_up_9606_tmalign.tsv
+OUTPUT_UNIPROT_ID_COLUMN_NUMBER_QUERY_SPECIES: 1
+OUTPUT_UNIPROT_ID_COLUMN_NUMBER_HIT_SPECIES: 2
+OUTPUT_UNIPROT_ID_FILE_NAME_QUERY_SPECIES: uniprot_id_rice_up_tmalign_rice_idlist.txt
+OUTPUT_UNIPROT_ID_FILE_NAME_HIT_SPECIES: uniprot_id_rice_up_tmalign_human_idlist.txt

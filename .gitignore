@@ -4,6 +4,6 @@ cwl_cache/
 Data/
 index/
 notebooks/cache/
-notebooks/other/
+notebooks/previous_notebooks/
 out/
 .DS_Store
