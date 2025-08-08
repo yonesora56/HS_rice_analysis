@@ -1,0 +1,6 @@
+sequence:
+  class: File
+  format: edam:format_1929
+  location: ../../Data/16_retrieve_sequence_rice_up/rice_up/blastdbcmd_result_rice_up_human.fasta
+
+output_dir_name: sequence_rice_up_human

@@ -5,8 +5,7 @@ label: "retrieve sequence and perform pairwise alignment (sub-workflow process)"
 doc: |
   The process of retrieving protein sequences corresponding to pairs of structures hit by Foldseek, and performing pairwise alignments.
   This process assumes that the query, target, and both files are data that are predicted in AlphaFold DB.
-  makeblastdb: ../Tools/14_makeblastdb_v2.cwl
-  blastdbcmd: ../Tools/15_blastdbcmd.cwl
+  blastdbcmd: ../Tools/15_blastdbcmd_v2.cwl
   seqretsplit: ../Tools/16_seqretsplit.cwl
   needle (Global alignment): ../Tools/17_needle.cwl
   water (Local alignment): ../Tools/17_water.cwl

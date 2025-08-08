@@ -1,0 +1,8 @@
+---
+alwaysApply: true
+---
+
+# 1. Common Workflow Language (CWL) について
+
+- `.cwl`に関するファイルについて質問したときは、必ず以下の公式ドキュメントを参考にしてください。
+- https://www.commonwl.org/user_guide/

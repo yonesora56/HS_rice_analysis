@@ -15,7 +15,7 @@ inputs:
     default:
       class: File
       format: edam:format_1929
-      location: ../test/workflow_test/blastdbcmd_result_query_species.fasta
+      location: ../Data/16_retrieve_sequence_rice_up/rice_up/blastdbcmd_result_rice_up_rice.fasta
   # - id: sformat1
   #   type: string
   #   doc: "sequence format"

@@ -1,0 +1,6 @@
+entry_batch:
+  class: File
+  location: ../../Data/15_foldseek_hit_idlist/uniprot_id_rice_down_tmalign_human_idlist.txt
+
+retrieve_result_file_name: blastdbcmd_result_rice_down_tmalign_human.fasta
+logfile_name: blastdbcmd_result_rice_down_tmalign_human.log

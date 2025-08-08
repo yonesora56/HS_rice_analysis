@@ -1,0 +1,6 @@
+sequence:
+  class: File
+  format: edam:format_1929
+  location: ../../Data/16_retrieve_sequence_rice_up/rice_up_tmalign/blastdbcmd_result_rice_up_tmalign_rice.fasta
+
+output_dir_name: sequence_rice_up_tmalign_rice
