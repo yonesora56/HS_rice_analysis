@@ -1,6 +1,3 @@
-## plant2human workflow
+## HS_rice_analysis_script
 
-
-```bash
-cwltool --debug ./Workflow/plant2human_v1_6.cwl
-```
+- 
