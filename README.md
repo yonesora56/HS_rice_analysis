@@ -14,9 +14,11 @@ This repository contains the code and Jupyter notebooks used to create the follo
 
 &nbsp;
 
+&nbsp;
+
 The correspondence between the created figures, the code used, and the notebooks can be confirmed from each figure on figshare.
 
-> Yonezawa, Sora; Bono, Hidemasa (2025). (Supplementary Files) Functional Annotation of Novel Heat Stress-responsive Genes in Rice Utilizing Public Transcriptomes and Structurome. figshare. Collection. https://doi.org/10.6084/m9.figshare.c.7835495.v3
+> Yonezawa, Sora; Bono, Hidemasa (2025). (Supplementary Files) Functional Annotation of Novel Heat Stress-responsive Genes in Rice Utilizing Public Transcriptomes and Structurome. figshare. Collection. https://doi.org/10.6084/m9.figshare.c.7835495
 
 &nbsp;
 

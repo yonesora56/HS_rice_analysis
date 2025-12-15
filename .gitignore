@@ -1,9 +1,10 @@
 .vscode/
-Archive/
-cwl_cache/
-Data/
-index/
-notebooks/cache/
-notebooks/previous_notebooks/
-out/
+/Archive/
+/cwl_cache/
+/Data/
+/index/
+/notebooks/cache/
+/notebooks/previous_notebooks/
+/notebooks/15_foldseek_hit_check_status.ipynb
+/out/
 .DS_Store
