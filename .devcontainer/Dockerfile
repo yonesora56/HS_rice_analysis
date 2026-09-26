@@ -1,12 +1,20 @@
-# Get arguments for python version (in this case, python 3.10 image is used)
-ARG VARIANT="3.11-bullseye"
-FROM mcr.microsoft.com/vscode/devcontainers/python:0-${VARIANT}
+# Use the official DevContainers Python image (Python 3.13 on Debian Bookworm)
+# Note: Old path 'mcr.microsoft.com/vscode/devcontainers/' is deprecated
+# New path: 'mcr.microsoft.com/devcontainers/'
+# https://github.com/devcontainers/images/tree/main/src/python
+FROM mcr.microsoft.com/devcontainers/python:3.13-bookworm
+
+COPY fix-dind.sh /usr/local/share/fix-dind.sh
+RUN chmod +x /usr/local/share/fix-dind.sh
+
+# Fix for expired Yarn GPG key in the base image
+# Remove the problematic Yarn repository before apt-get update
+RUN rm -f /etc/apt/sources.list.d/yarn.list || true
 
 # linux settings
 # `-y` option is used to automatically answer yes to all prompts
 RUN apt-get update && apt-get -y upgrade && apt-get install -y --no-install-recommends \
     byobu \
-    emboss \
     aria2 \
     libcurl4-gnutls-dev \
     libssl-dev \
@@ -15,66 +23,40 @@ RUN apt-get update && apt-get -y upgrade && apt-get install -y --no-install-reco
     libgmp-dev \
     libmagick++-dev \
     libglpk-dev \
-    libnss3 \
-    libatk-bridge2.0-0 \
-    libcups2 \
-    libxcomposite1 \
-    libxdamage1 \
-    libxfixes3 \
-    libxrandr2 \
-    libgbm1 \
-    libxkbcommon0 \
-    libpango-1.0-0 \
-    libcairo2 \
-    libasound2
+    openjdk-17-jdk \
+    bedtools
 
-# RUN SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/commandhistory/.bash_history" \
-#     && echo "$SNIPPET" >> "/root/.bashrc"
+# install uv (used only as a faster pip-compatible installer)
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+ENV PATH="/root/.local/bin:${PATH}"
 
-# [Choice] Node.js version: none, lts/*, 16, 14, 12, 10
-# ARG NODE_VERSION="none"
-# RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
-
-
-# update pip & install packages (including CWL tool)
-RUN pip install \
-    --upgrade pip \ 
-    jupyter==1.0.0 \ 
-    ipykernel==6.29.4 \
-    pandas==2.2.0 \
-    pyarrow==15.0.0 \
-    upsetplot==0.9.0 \
-    numpy==1.26.3 \
-    matplotlib==3.8.2 \ 
-    scipy==1.12.0 \
-    statsmodels==0.14.1 \
-    seaborn==0.13.2 \
-    urllib3==2.1.0 \ 
-    retry==0.9.2 \ 
-    PyYAML==6.0.1 \ 
-    requests==2.31.0 \ 
-    polars==1.21.0 \
-    cwl_runner==1.0 \
-    argparse==1.4.0 \
-    unipressed==1.3.0 \
-    papermill==2.6.0 \
-    goatools==1.4.12 \
-    pipx==1.6.0 \
-    biopython==1.84 \
-    plotly==6.1.2 \
-    kaleido==1.0.0 \
-    cwltool==3.1.20250110105449 \
-    cwltest==2.5.20241122133319
+# Install packages into the image Python (including CWL tool)
+# version update 2025-11-12
+# uv uses system python by default; `--system` flag is used to install packages into the system python (base image is Python 3.13)
+COPY requirements.txt /tmp/requirements.txt
+RUN uv pip install --system --no-cache -r /tmp/requirements.txt
 
 RUN pipx install benten==2021.1.5
 
 # Jupyter Notebook settings
-RUN python3 -m ipykernel install --user --name=python3 
+RUN python3 -m ipykernel install --user --name=python3
 RUN jupyter notebook --generate-config
 
-# install zatsu-cwl-generator
-ARG zatsu_ver=v1.1.1
-RUN curl -fLSs https://github.com/tom-tan/zatsu-cwl-generator/releases/download/${zatsu_ver}/zatsu-cwl-generator-${zatsu_ver}-linux-x86_64.tar.xz | \
-    tar Jxvf - && \
-    mv zatsu-cwl-generator /usr/local/bin
+# Install Nextflow
+# Download and install Nextflow using self-installing package
+RUN curl -s https://get.nextflow.io | bash && \
+    chmod +x nextflow && \
+    mv nextflow /usr/local/bin/ && \
+    nextflow info
 
+# Install Juicer Tools 2.20.00 (HIC v9; use with h1d --juicertool)
+# https://github.com/aidenlab/Juicebox/releases/tag/v2.20.00
+# RUN curl -fsSL -o /usr/local/lib/juicer_tools.2.20.00.jar \
+#     https://github.com/aidenlab/Juicebox/releases/download/v2.20.00/juicer_tools.2.20.00.jar && \
+#     printf '%s\n' \
+#       '#!/bin/bash' \
+#       'exec java -jar /usr/local/lib/juicer_tools.2.20.00.jar "$@"' \
+#       > /usr/local/bin/juicer_tools && \
+#     chmod +x /usr/local/bin/juicer_tools
+
+# Text2Term settings: uncomment text2term in requirements.txt if needed

@@ -7,4 +7,4 @@
 /notebooks/previous_notebooks/
 /notebooks/15_foldseek_hit_check_status.ipynb
 /out/
-.DS_Store
+*.DS_Store
